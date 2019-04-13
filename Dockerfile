@@ -1,6 +1,9 @@
 FROM ubuntu:bionic
 MAINTAINER Leonardo Loures <luvres@hotmail.com>
 
+# 11.0.2+9	/f51449fcd52f4d52b93a989c5c56ed3c/
+# 12+33		/312335d836a34c7c8bba9d963e26dc23/
+
 RUN \
 	apt-get update \
 	&& apt-get install --no-install-recommends -y \
