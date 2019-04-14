@@ -33,7 +33,6 @@ RUN \
 	&& rm Anaconda3-${ANACONDA_VERSION}-Linux-x86_64.sh
 
 
-
 ENV PATH=/opt/anaconda3/bin:$PATH
 
 ENV JAVA_HOME=/opt/jdk 
