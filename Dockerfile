@@ -36,13 +36,13 @@ RUN \
 ENV PATH=/opt/anaconda3/bin:$PATH
 
 ENV JAVA_HOME=/opt/jdk 
-ENV	PATH=${PATH}:${JAVA_HOME}/bin:${JAVA_HOME}/sbin
+ENV PATH=${PATH}:${JAVA_HOME}/bin:${JAVA_HOME}/sbin
 
 ENV SPARK_HOME=/opt/spark
-ENV	PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin
-ENV	PYSPARK_PYTHON=python3
-ENV	PYSPARK_DRIVER_PYTHON=ipython
-ENV	PYSPARK_DRIVER_PYTHON_OPTS="notebook --allow-root \
+ENV PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin
+ENV PYSPARK_PYTHON=python3
+ENV PYSPARK_DRIVER_PYTHON=ipython
+ENV PYSPARK_DRIVER_PYTHON_OPTS="notebook --allow-root \
 										 --no-browser \
 										 --ip=0.0.0.0 \
 										 --notebook-dir=/root/notebooks \
