@@ -24,13 +24,15 @@ RUN \
 	&& mkdir /root/notebooks \
   \
   # Anaconda3
-  	&& ANACONDA_VERSION="2019.03" \
+	&& ANACONDA_VERSION="2019.03" \
 	&& curl -L https://repo.continuum.io/archive/Anaconda3-${ANACONDA_VERSION}-Linux-x86_64.sh \
 												-o Anaconda3-${ANACONDA_VERSION}-Linux-x86_64.sh \
   \
 	&& /bin/bash Anaconda3-${ANACONDA_VERSION}-Linux-x86_64.sh -b -p /usr/local/anaconda3 \
 	&& ln -s /usr/local/anaconda3/ /opt/anaconda3 \
-	&& rm Anaconda3-${ANACONDA_VERSION}-Linux-x86_64.sh
+	&& rm Anaconda3-${ANACONDA_VERSION}-Linux-x86_64.sh \
+  \
+	&& pip install tensorflow
 
 
 ENV PATH=/opt/anaconda3/bin:$PATH
