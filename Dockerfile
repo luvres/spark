@@ -1,7 +1,6 @@
 FROM ubuntu:bionic
 MAINTAINER Leonardo Loures <luvres@hotmail.com>
 
-
 RUN \
 	apt-get update \
 	&& apt-get install --no-install-recommends -y \
