@@ -1,6 +1,7 @@
 FROM ubuntu:bionic
 MAINTAINER Leonardo Loures <luvres@hotmail.com>
 
+ENV PATH=/opt/anaconda3/bin:$PATH
 
 RUN \
 	apt-get update \
@@ -34,8 +35,6 @@ RUN \
   \
 	&& pip install tensorflow
 
-
-ENV PATH=/opt/anaconda3/bin:$PATH
 
 ENV JAVA_HOME=/opt/jdk 
 ENV PATH=${PATH}:${JAVA_HOME}/bin:${JAVA_HOME}/sbin
