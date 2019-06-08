@@ -1,4 +1,6 @@
-## Spark 2.4.1
+## Spark 2.4.3
+### Java 11.0.2
+### Python 3.7.3
 -----
 
 ### Pull image
