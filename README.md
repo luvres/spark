@@ -11,6 +11,7 @@ docker pull izone/spark
 ```
 docker run --rm --name Spark \
 -p 8888:8888 \
+-p 4040:4040 \
 -v $HOME/notebooks:/root/notebooks \
 -ti izone/spark pyspark
 ```
