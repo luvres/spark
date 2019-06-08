@@ -17,7 +17,7 @@ RUN \
 		| tar xzf - -C /opt && mv /opt/jdk* /opt/jdk \
   \
   # Spark
-	&& SPARK_VERSION="2.4.1" \
+	&& SPARK_VERSION="2.4.3" \
 	&& curl http://mirror.nbtelecom.com.br/apache/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop2.7.tgz \
 			| tar xzf - -C /opt && mv /opt/spark* /opt/spark \
 	&& mkdir /root/notebooks \
