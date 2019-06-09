@@ -23,6 +23,12 @@ RUN \
 			| tar xzf - -C /opt && mv /opt/spark* /opt/spark \
 	&& mkdir /root/notebooks \
   \
+  # jdbc
+    && URL_JDBC="https://github.com/luvres/jdbc/raw/master" \
+    && MYSQL_CONN_J_VERSION="8.0.16" \
+    && curl -L ${URL_JDBC}/mysql-connector-java-${MYSQL_CONN_J_VERSION}.jar \
+                                                -o /opt/spark/jars/mysql-connector-java-${MYSQL_CONN_J_VERSION}.jar \
+  \
   # Anaconda3
 	&& ANACONDA_VERSION="2019.03" \
 	&& curl -L https://repo.continuum.io/archive/Anaconda3-${ANACONDA_VERSION}-Linux-x86_64.sh \
