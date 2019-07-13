@@ -34,10 +34,6 @@ RUN \
 
 
 ENV PATH=/opt/anaconda3/bin:$PATH
-
-# ENV JAVA_HOME=/opt/jdk 
-# ENV PATH=${PATH}:${JAVA_HOME}/bin:${JAVA_HOME}/sbin
-
 ENV SPARK_HOME=/opt/spark
 ENV PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin
 ENV PYSPARK_PYTHON=python3
