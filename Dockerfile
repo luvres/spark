@@ -1,4 +1,4 @@
-FROM openjdk:11.0.3-jdk-slim
+FROM openjdk:11.0.4-jdk-slim
 MAINTAINER Leonardo Loures <luvres@hotmail.com>
 
 RUN \
@@ -15,12 +15,12 @@ RUN \
   \
   # jdbc
     && URL_JDBC="https://github.com/luvres/jdbc/raw/master" \
-    && MYSQL_CONN_J_VERSION="8.0.16" \
+    && MYSQL_CONN_J_VERSION="8.0.17" \
     && curl -L ${URL_JDBC}/mysql-connector-java-${MYSQL_CONN_J_VERSION}.jar \
                                                 -o /opt/spark/jars/mysql-connector-java-${MYSQL_CONN_J_VERSION}.jar \
   \
   # Anaconda3
-	&& ANACONDA_VERSION="2019.03" \
+	&& ANACONDA_VERSION="2019.07" \
 	&& curl -L https://repo.continuum.io/archive/Anaconda3-${ANACONDA_VERSION}-Linux-x86_64.sh \
 												-o Anaconda3-${ANACONDA_VERSION}-Linux-x86_64.sh \
   \
@@ -28,9 +28,12 @@ RUN \
 	&& ln -s /usr/local/anaconda3/ /opt/anaconda3 \
 	&& rm Anaconda3-${ANACONDA_VERSION}-Linux-x86_64.sh \
   \
-	&& /opt/anaconda3/bin/pip install \
-		xgboost \
-		tensorflow
+	&& /opt/anaconda3/bin/conda upgrade -y conda \
+	&& /opt/anaconda3/bin/conda upgrade -y --all \
+  \
+	&& /opt/anaconda3/bin/pip install --upgrade pip 
+		#xgboost \
+		#tensorflow
 
 
 ENV PATH=/opt/anaconda3/bin:$PATH
