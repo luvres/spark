@@ -8,7 +8,7 @@ RUN \
   \
   # Spark
     #http://mirror.nbtelecom.com.br/apache/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop2.7.tgz
-	&& SPARK_VERSION="2.4.3" \
+	&& SPARK_VERSION="2.4.4" \
 	&& curl http://mirror.nbtelecom.com.br/apache/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop2.7.tgz \
 			| tar xzf - -C /opt && mv /opt/spark* /opt/spark \
 	&& mkdir /root/notebooks \
@@ -31,8 +31,10 @@ RUN \
 	&& /opt/anaconda3/bin/conda upgrade -y conda \
 	&& /opt/anaconda3/bin/conda upgrade -y --all \
   \
-	&& /opt/anaconda3/bin/pip install --upgrade pip 
-		#xgboost \
+	&& /opt/anaconda3/bin/pip install --upgrade pip \
+	&& /opt/anaconda3/bin/pip install \
+		unidecode \
+		xgboost 
 		#tensorflow
 
 
