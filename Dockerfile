@@ -9,13 +9,13 @@ RUN \
   # Spark
     #http://mirror.nbtelecom.com.br/apache/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop2.7.tgz
 	&& SPARK_VERSION="2.4.4" \
-	&& curl http://mirror.nbtelecom.com.br/apache/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop2.7.tgz \
+	&& curl -L http://mirror.nbtelecom.com.br/apache/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop2.7.tgz \
 			| tar xzf - -C /opt && mv /opt/spark* /opt/spark \
 	&& mkdir /root/notebooks \
   \
   # jdbc
     && URL_JDBC="https://github.com/luvres/jdbc/raw/master" \
-    && MYSQL_CONN_J_VERSION="8.0.17" \
+    && MYSQL_CONN_J_VERSION="8.0.18" \
     && curl -L ${URL_JDBC}/mysql-connector-java-${MYSQL_CONN_J_VERSION}.jar \
                                                 -o /opt/spark/jars/mysql-connector-java-${MYSQL_CONN_J_VERSION}.jar \
   \
