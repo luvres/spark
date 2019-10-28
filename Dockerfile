@@ -35,6 +35,7 @@ RUN \
 	&& /opt/anaconda3/bin/pip install \
 		unidecode \
 		xgboost \
+		mlxtend \
 		tensorflow
 
 
