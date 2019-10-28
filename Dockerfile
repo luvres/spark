@@ -1,4 +1,4 @@
-FROM openjdk:11.0.4-jdk-slim
+FROM openjdk:11.0.5-jdk-slim
 MAINTAINER Leonardo Loures <luvres@hotmail.com>
 
 RUN \
@@ -20,7 +20,7 @@ RUN \
                                                 -o /opt/spark/jars/mysql-connector-java-${MYSQL_CONN_J_VERSION}.jar \
   \
   # Anaconda3
-	&& ANACONDA_VERSION="2019.07" \
+	&& ANACONDA_VERSION="2019.10" \
 	&& curl -L https://repo.continuum.io/archive/Anaconda3-${ANACONDA_VERSION}-Linux-x86_64.sh \
 												-o Anaconda3-${ANACONDA_VERSION}-Linux-x86_64.sh \
   \
@@ -34,8 +34,8 @@ RUN \
 	&& /opt/anaconda3/bin/pip install --upgrade pip \
 	&& /opt/anaconda3/bin/pip install \
 		unidecode \
-		xgboost 
-		#tensorflow
+		xgboost \
+		tensorflow
 
 
 ENV PATH=/opt/anaconda3/bin:$PATH

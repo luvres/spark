@@ -1,5 +1,5 @@
 ## Apache Spark 2.4.4
-### OpenJDK 11.0.4 and Python 3.7.4 (Anaconda3 2019.07)
+### OpenJDK 11.0.5 and Python 3.7.4 (Anaconda3 2019.10)
 -----
 
 ### Pull image
